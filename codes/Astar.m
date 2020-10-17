@@ -32,9 +32,9 @@ while ~ isempty(open)
         fprintf('SUCCESS, The shortest optimal path is found!\n');
         path = reconstruct_path(parent_node, current,start);
         fprintf("The shortest optimal path = "); disp(path);        
-        pathcost = findcost(path, distance, nodes);
+        pathcost = findcost(path, distance);
         fprintf("The path_cost of optimal path = "); disp(pathcost);
-        writematrix(path,filename);
+        writematrix(path,'path.csv');
         break;
     end    
     close(1, c) = current; 
